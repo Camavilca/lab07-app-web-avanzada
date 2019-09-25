@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/stylesheets/pagos.css">
+<div class="container px-5">
+    <div class="card text-center card-info mx-5">
+        <card class="card-header">
+            <h4 class="text-primary text-uppercase">
+                <%= titulo %>
+            </h4>
+        </card>
+        <form action="/dash/resultado" method="post">
+            <div class="card-body my-5">
+                <div>
+                    <div class="chiller_cb">
+                        <input name="tipoPago" id="myCheckbox" type="checkbox" value="efectivo">
+                        <label for="myCheckbox">Efectivo</label>
+                        <span></span>
+                    </div>
+                    <div class="chiller_cb">
+                        <input name="tipoPago" id="myCheckbox2" type="checkbox" value="tarjeta">
+                        <label for="myCheckbox2">Tarjeta de Credito</label>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <% if (left) { %>
+                <a href="/dash/nivel">
+                    <img class="rounded float-left" src="/images/left.png">
+                </a>
+                <% } %>
+                <% if (right) { %>
+                <button type="submit" class="btn">
+                    <img class="rounded float-right" src="/images/right.png">
+                </button>
+                <% } else { %>
+                <button class="btn btn-outline-primary float-right py-4" style="border-radius: 50%">Guardar</button>
+                <% } %>
+            </div>
+        </form>
+    </div>
+</div>
